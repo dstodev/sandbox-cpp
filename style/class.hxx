@@ -2,7 +2,7 @@ struct BaseType {};  // (Pretend this is in another file; keep headers to one ty
 
 class MyClass : public BaseType {
 private:
-	// Private data members first
+	// Protected then private data members first
 	int _value;  // '_' prefix
 
 public:
@@ -15,6 +15,13 @@ public:
 	MyClass & operator=(const MyClass & copy) = default;  // Copy-assignment operator
 	MyClass & operator=(MyClass && move) = default;       // Move-assignment operator
 
+	// Conversion operators next
+	operator int();
+
+	// Non-assignment, non-conversion operators next
+	MyClass operator+(const MyClass & rhs) const;
+	MyClass & operator+=(const MyClass & rhs);
+
 	// Behavioral functions next
 	void do_something();
 
@@ -22,11 +29,7 @@ public:
 	void value(int value);
 	int value() const;
 
-protected:
-	// Protected member functions next
-	void part_of_algorithm();
-
 private:
-	// Finally, private member functions
+	// Finally, protected then private member functions
 	void helper();
 };
