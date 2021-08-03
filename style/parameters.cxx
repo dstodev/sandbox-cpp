@@ -2,17 +2,17 @@ void long_parameter_list(int parameter_1, int parameter_2, int parameter_3, int 
 
 class ReallySuperExtraLongClassName {
 private:
-	int value;
+	int _value;
 
 public:
 	explicit ReallySuperExtraLongClassName(int value)
-	    : value(value)
+	    : _value(value)
 	{}
 	~ReallySuperExtraLongClassName() = default;
 
 	operator int() const
 	{
-		return value;
+		return _value;
 	}
 };
 
