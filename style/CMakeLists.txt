@@ -1,7 +1,8 @@
 project(Style)
 
-set(target_name "${PROJECT_NAME}_main")
+set(target_name "${PROJECT_NAME}_lib")
 
-add_executable(${target_name}
-	main.cxx
+add_library(${target_name} SHARED
+	includes.hxx
+	parameters.cxx
 )

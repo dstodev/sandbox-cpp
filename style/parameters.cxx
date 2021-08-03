@@ -1,7 +1,10 @@
 void long_parameter_list(int parameter_1, int parameter_2, int parameter_3, int parameter_4);
 
-struct ReallySuperExtraLongClassName
-{
+class ReallySuperExtraLongClassName {
+private:
+	int value;
+
+public:
 	explicit ReallySuperExtraLongClassName(int value)
 	    : value(value)
 	{}
@@ -11,11 +14,9 @@ struct ReallySuperExtraLongClassName
 	{
 		return value;
 	}
-
-	int value;
 };
 
-int main(int argc, char * argv[])
+int mainlike_function(int argc, char * argv[])
 {
 	long_parameter_list(ReallySuperExtraLongClassName(1),
 	                    ReallySuperExtraLongClassName(2),
@@ -26,7 +27,8 @@ int main(int argc, char * argv[])
 	case 1: long_parameter_list(1, 2, 3, 4); break;
 	case 2: long_parameter_list(5, 6, 7, 8); break;
 	case 4: {
-		long_parameter_list(1, 2, 3, 4);
+		const int one = 1;
+		long_parameter_list(one, 2, 3, 4);
 	} break;
 	case 3:
 		long_parameter_list(ReallySuperExtraLongClassName(1),
