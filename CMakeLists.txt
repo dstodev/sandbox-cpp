@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.17)
 project(Sandbox)
 
 add_subdirectory(concepts)
@@ -5,6 +6,7 @@ add_subdirectory(downcast)
 add_subdirectory(getopt)
 add_subdirectory(impl)
 add_subdirectory(interface_destructor)
+add_subdirectory(move_noncopyable)
 add_subdirectory(static_enum_iterator)
 add_subdirectory(style)
 add_subdirectory(specialization)
